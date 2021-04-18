@@ -1,0 +1,2 @@
+pyside6==6.0.3
+diceware==0.9.6
