@@ -1,0 +1,19 @@
+/* Main Widget */
+QPushButton#generateButton {
+    background-color: #023047;
+    border: 1px solid #001b29;
+    color: #FFFFFF;
+    border-radius: 2px;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+QTextEdit#passphrase {
+    font-size: 36px;
+}
+
+
+/* Options Widget */
+OptionsWidget {
+    background: #FFB703;
+}
