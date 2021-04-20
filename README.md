@@ -1,4 +1,4 @@
-![saikoro screenshot](https://github.com/SaptakS/saikoro/blob/main/resources/screenshot.png?raw=true)
+![saikoro screenshot](https://github.com/SaptakS/saikoro/blob/main/saikorosrc/resources/screenshot.png?raw=true)
 # Saikoro: Easy to use GUI for diceware passphrases
 
 Saikoro is a desktop application catered towards making diceware passphrase generation easy and accessible for non-tech savvy users as well. It uses the python package [diceware](https://diceware.readthedocs.io/en/stable/) that is commonly used by people comfortable with command line interface to generate passphrase.
