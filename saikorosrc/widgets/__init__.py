@@ -6,7 +6,6 @@ CSS = load_css("main.css")
 
 
 class OptionsWidget(QtWidgets.QWidget):
-
     def __init__(self, parent=None):
         super(OptionsWidget, self).__init__(parent)
         self.setMaximumWidth(200)
@@ -32,11 +31,12 @@ class OptionsWidget(QtWidgets.QWidget):
 
         # Form layout
         formLayout = QtWidgets.QFormLayout()
-        formLayout.addRow("&No. of words: ", self.nowWidget)
-        formLayout.addRow("&No. of special characters", self.spCharacterWidget)
+        formLayout.addRow("&No. of words", self.nowWidget)
+        formLayout.addRow("No. of &special characters", self.spCharacterWidget)
         formLayout.addRow("&Delimiter", self.delimiterWidget)
         formLayout.setRowWrapPolicy(QtWidgets.QFormLayout.WrapAllRows)
-        
+        formLayout.setVerticalSpacing(8)
+
         self.setLayout(formLayout)
 
     def update_no_of_words(self):
@@ -44,25 +44,24 @@ class OptionsWidget(QtWidgets.QWidget):
 
     def update_spcharacters(self):
         self.parent.options.specials = self.spCharacterWidget.value()
-    
+
     def update_delimiter(self):
         self.parent.options.delimiter = self.delimiterWidget.text()
 
     def paintEvent(self, evt):
-        super(OptionsWidget,self).paintEvent(evt)
+        super(OptionsWidget, self).paintEvent(evt)
         opt = QtWidgets.QStyleOption()
         opt.initFrom(self)
         p = QtGui.QPainter(self)
         s = self.style()
-        s.drawPrimitive(QtWidgets.QStyle.PE_Widget, opt, p, self) 
+        s.drawPrimitive(QtWidgets.QStyle.PE_Widget, opt, p, self)
 
 
 class WrapAnywhereLabel(QtWidgets.QTextEdit):
-
     def __init__(self, text, parent=None):
         super(WrapAnywhereLabel, self).__init__(text, parent)
-        self.setMaximumHeight(200)
-        
+        self.setMaximumHeight(250)
+
         # Make it look like label
         self.setReadOnly(True)
         self.setFrameStyle(QtWidgets.QFrame.NoFrame)

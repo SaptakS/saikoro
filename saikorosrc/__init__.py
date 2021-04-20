@@ -21,7 +21,7 @@ class DicewareWidget(QtWidgets.QMainWindow):
         # Button to generate new passphrase
         self.generateButton = QtWidgets.QPushButton("Generate New Passphrase")
         self.generateButton.clicked.connect(self.generate_passphrase)
-        self.generateButton.setFixedSize(300, 100)
+        self.generateButton.setFixedSize(300, 115)
         self.generateButton.setObjectName("generateButton")
 
         # Display passphrase
@@ -33,6 +33,8 @@ class DicewareWidget(QtWidgets.QMainWindow):
 
         # Button to copy passphrase
         self.copyButton = QtWidgets.QPushButton("Copy passphrase")
+        self.copyButton.clicked.connect(self.copy_passphrase)
+        self.copyButton.setFixedSize(200, 45)
         self.copyButton.setObjectName("copyButton")
 
         # Layouting things
@@ -51,7 +53,7 @@ class DicewareWidget(QtWidgets.QMainWindow):
         layout = QtWidgets.QHBoxLayout()
         layout.addWidget(mainWidget)
         layout.addWidget(formWidget)
-        layout.setContentsMargins(0,0,0,0)
+        layout.setContentsMargins(0, 0, 0, 0)
 
         cwidget = QtWidgets.QWidget()
         cwidget.setLayout(layout)
@@ -61,6 +63,10 @@ class DicewareWidget(QtWidgets.QMainWindow):
     def generate_passphrase(self):
         passphrase = diceware.get_passphrase(self.options)
         self.text.setText(passphrase)
+
+    def copy_passphrase(self):
+        clipboard = QtWidgets.QApplication.clipboard()
+        clipboard.setText(self.text.toPlainText(), mode=clipboard.Clipboard)
 
 
 def main():
@@ -72,4 +78,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
