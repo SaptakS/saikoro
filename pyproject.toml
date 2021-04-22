@@ -4,7 +4,7 @@ bundle = "rocks.saikoro"
 version = "0.0.1"
 url = "https://saikoro.rocks/"
 license = "GNU General Public License v3 (GPLv3)"
-author = 'Saptak S'
+author = 'Saptak Sengupta'
 author_email = "mail@saptaks.website"
 
 [tool.briefcase.app.saikoro]
