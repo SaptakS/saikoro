@@ -2,8 +2,8 @@ import sys
 import diceware
 from PySide6 import QtCore, QtWidgets, QtGui
 
-from saikorosrc.widgets import OptionsWidget, WrapAnywhereLabel
-from saikorosrc.resources import load_css
+from saikoro.widgets import OptionsWidget, WrapAnywhereLabel
+from saikoro.resources import load_css
 
 
 CSS = load_css("main.css")
@@ -74,7 +74,3 @@ def main():
     widget = DicewareWidget()
     widget.show()
     sys.exit(app.exec_())
-
-
-if __name__ == "__main__":
-    main()

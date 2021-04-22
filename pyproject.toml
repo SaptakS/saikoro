@@ -1,0 +1,35 @@
+[tool.briefcase]
+project_name = "Saikoro"
+bundle = "rocks.saikoro"
+version = "0.0.1"
+url = "https://saikoro.rocks/"
+license = "GNU General Public License v3 (GPLv3)"
+author = 'Saptak S'
+author_email = "mail@saptaks.website"
+
+[tool.briefcase.app.saikoro]
+formal_name = "Saikoro"
+description = "Saikoro is a desktop application catered towards making diceware passphrase generation easy and accessible for non-tech savvy users as well"
+sources = ['src/saikoro']
+requires = [
+    "pyside6==6.0.3",
+    "diceware==0.9.6",
+]
+
+
+[tool.briefcase.app.saikoro.macOS]
+requires = []
+
+[tool.briefcase.app.saikoro.linux]
+requires = []
+system_requires = []
+
+[tool.briefcase.app.saikoro.windows]
+requires = []
+
+# Mobile deployments
+[tool.briefcase.app.saikoro.iOS]
+requires = []
+
+[tool.briefcase.app.saikoro.android]
+requires = []

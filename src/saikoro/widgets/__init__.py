@@ -1,5 +1,5 @@
 from PySide6 import QtCore, QtWidgets, QtGui
-from saikorosrc.resources import load_css
+from saikoro.resources import load_css
 
 
 CSS = load_css("main.css")
