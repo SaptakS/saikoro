@@ -11,7 +11,7 @@ All the features use diceware directly. So Saikoro is kind of a GUI wrapper for 
 - `python3 -m venv .venv`
 - `source .venv/bin/activate`
 - `python3 -m pip install -r requirements.txt`
-- `./run.py`
+- `./scripts/dev.sh`
 
 ## Is it secure?
 
