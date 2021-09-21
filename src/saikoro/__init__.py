@@ -24,6 +24,9 @@ class DicewareWidget(QtWidgets.QMainWindow):
         self.generateButton.setFixedSize(300, 115)
         self.generateButton.setObjectName("generateButton")
 
+        # Storing available wordlist
+        self.available_wordlist = diceware.get_wordlist_names()
+
         # Display passphrase
         self.options = diceware.handle_options(args=[])
         passphrase = diceware.get_passphrase(self.options)
