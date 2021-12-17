@@ -29,11 +29,18 @@ class OptionsWidget(QtWidgets.QWidget):
         self.delimiterWidget = QtWidgets.QLineEdit()
         self.delimiterWidget.textChanged.connect(self.update_delimiter)
 
+        # Wordlist
+        self.wordlistWidget = QtWidgets.QComboBox()
+        self.wordlistWidget.addItems(self.parent.available_wordlist)
+        self.wordlistWidget.setCurrentText(self.parent.options.wordlist)
+        self.wordlistWidget.currentTextChanged.connect(self.update_wordlist)
+
         # Form layout
         formLayout = QtWidgets.QFormLayout()
         formLayout.addRow("&No. of words", self.nowWidget)
         formLayout.addRow("No. of &special characters", self.spCharacterWidget)
         formLayout.addRow("&Delimiter", self.delimiterWidget)
+        formLayout.addRow("Wordlist", self.wordlistWidget)
         formLayout.setRowWrapPolicy(QtWidgets.QFormLayout.WrapAllRows)
         formLayout.setVerticalSpacing(8)
 
@@ -47,6 +54,9 @@ class OptionsWidget(QtWidgets.QWidget):
 
     def update_delimiter(self):
         self.parent.options.delimiter = self.delimiterWidget.text()
+
+    def update_wordlist(self):
+        self.parent.options.wordlist = self.wordlistWidget.currentText() 
 
     def paintEvent(self, evt):
         super(OptionsWidget, self).paintEvent(evt)
